@@ -2,6 +2,7 @@ package proto
 
 type (
 	PingReq struct {
-		// empty
+		A int64 `json:"a"`
+		B int64 `json:"b"`
 	}
 )

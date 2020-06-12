@@ -1,4 +1,4 @@
-package http
+package cinex
 
 import (
 	"context"
@@ -14,17 +14,17 @@ type safeGinCtx struct {
 	ginCtx *gin.Context
 }
 
-// http 头部信息
+// Header :http 头部信息
 type Header struct {
 }
 
-// http 头部信息类型
+// HeaderType :http 头部信息类型
 type HeaderType struct {
 }
 
 // APIContext gin.Context 封装
 type APIContext struct {
-	//匿名包含Context接口，即Ctx本身也是一个合法的Context
+	// 匿名包含Context接口，即Ctx本身也是一个合法的Context
 	context.Context
 	timeoutCtxCancel context.CancelFunc // 超时取消函数，因为Ctx默认继承自WithTimeout的Context
 	ginCtx           *gin.Context       // 原始的ginCtx，有些地方需要用到

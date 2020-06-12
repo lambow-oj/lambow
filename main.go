@@ -1,14 +1,15 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"git/lambow-oj/lambow/cinex"
+	"git/lambow-oj/lambow/handler"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	router := gin.New()
-	// Init(r)
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	handler.Init()
+	cinex.InitHandler(router)
 	router.Run() // listen and serve on 0.0.0.0:8080
 }

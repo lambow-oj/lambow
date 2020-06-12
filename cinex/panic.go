@@ -1,4 +1,4 @@
-package http
+package cinex
 
 type ginPanicType struct {
 	err interface{}

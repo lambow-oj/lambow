@@ -10,7 +10,7 @@ type (
 	PingRsp struct {
 		Base
 		Data struct {
-			Pong string `json:"pong"`
+			Pong int64 `json:"pong"`
 		} `json:"data"`
 	}
 )
