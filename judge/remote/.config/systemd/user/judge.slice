@@ -1,0 +1,3 @@
+[Slice]
+AllowedCPUs=0
+MemoryMax=65536

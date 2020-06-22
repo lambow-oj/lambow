@@ -1,0 +1,23 @@
+[Unit]
+Description=compile.service: I compile code
+
+[Service]
+# Only compile once
+Type=oneshot
+
+# Use unprivileged user
+User=lambow
+Group=lambow
+
+# Disable all devices, including /dev/{null,random,zero}
+DevicePolicy=strict
+
+# [env]
+Environment=CC=/usr/bin/gcc
+Environment=CCC=/usr/bin/g++
+# [/env]
+
+# [restrictions]
+# [/restrictions]
+
+ExecStart=/bin/bash %h/scripts/compile.sh

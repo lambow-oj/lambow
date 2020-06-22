@@ -1,0 +1,21 @@
+[Unit]
+Description=single.service: I run single test case
+
+[Service]
+# Run each test case once
+Type=oneshot
+
+# Use unprivileged user
+User=lambow
+Group=lambow
+
+# Disable all devices, including /dev/{null,random,zero}
+DevicePolicy=strict
+
+# [env]
+# [/env]
+
+# [restrictions]
+# [/restrictions]
+
+ExecStart=%h/scripts/compile.sh
